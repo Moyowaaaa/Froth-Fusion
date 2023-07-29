@@ -1,0 +1,142 @@
+
+@import "abstract/mixins";
+@import "base/typography";
+
+// html{
+//     font-size: calc(150vw / 1368 * 10);
+//     cursor: crosshair;
+
+    
+//     @media screen and (min-width:1024px) {
+//         html{
+//             font-size: calc(100vw / 1440 * 16);
+//         }
+     
+//     }
+// }
+
+
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     box-sizing: border-box;
+// }
+
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: white;
+ 
+ 
+    @media screen and (min-width:1024px) {
+       
+             font-size: calc(100vw / 1440 * 16);
+        
+
+        }
+   
+}
+
+
+body {
+    // perspective: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+section {
+    width: 100%;
+}
+button {
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+
+}
+
+
+
+@font-face {
+    font-family:"grotesk" ;
+    src:  url('/fonts/DTGetaiGroteskDisplay-Black.otf');
+    font-display: swap; 
+}
+
+@font-face {
+    font-family:"maby" ;
+    src:  url('/fonts/MabryPro-Regular.ttf');
+    font-display: swap; 
+}
+
+@font-face {
+    font-family:"maby-md" ;
+    src:  url('/fonts/MabryPro-Medium.ttf');
+    font-display: swap; 
+}
+
+
+
+@font-face {
+    font-family:"doctor-glitch" ;
+    src:  url('/fonts/doctor.otf');
+    font-display: swap; 
+}
+
+html {
+    background-color:black;
+   
+}
+
+
+
+.link {
+    display: inline-block;
+    padding-bottom:2px;
+    background-image: linear-gradient( #F89623,#F89623);
+    background-position: right -100% bottom 0;
+    background-size: 200% 2px;
+    background-repeat: no-repeat;
+    transition:
+    background-size 0.3s,
+    background-position 0s 0.3s ; /*change after the size immediately*/
+  }
+
+  .link:hover {
+    background-position: 100% 100%; 
+    background-size: 100% 2px;
+    cursor: pointer;
+  }
+  
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    display: none;
+    height: 6px;
+    background: linear-gradient(180deg, #FDFCFB -31.14%, #FDFCFB -31.13%, #E2D1C3 100%);
+}
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    background: #141414; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+
+
+
+
