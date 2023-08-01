@@ -13,9 +13,4 @@
 </script>
 
 <style scoped lang="scss">
-.defaultLayout{
-   
-
-
-}
 </style>

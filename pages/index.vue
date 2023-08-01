@@ -1,13 +1,14 @@
 <template>
     <div>
-      <defaultLayout>
+      
         <MainTitle />
         <Marquee />
         <Hero />
+        <CarouselSection />
         <TestimonialsSection />
         <ShowcaseSection />
         <Misc />
-      </defaultLayout>
+      
     </div>
   </template>
   

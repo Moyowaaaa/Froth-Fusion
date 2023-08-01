@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
     const heroContainer = document.querySelector('.heroSection')
-    gsap.from(heroContainer?.children[1],{
+    gsap.from((heroContainer as HTMLDivElement)?.children[1],{
         height:'5rem',
         ease:"power3.inOut",
         duration:1,

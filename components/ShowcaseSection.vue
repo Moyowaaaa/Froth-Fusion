@@ -39,7 +39,7 @@ onMounted(() => {
 
   const tl = gsap.timeline()
   showcaseImageContainer.forEach((container) => ( 
-    intersectionObserver(container,{ threshold: 0.1 }).then(() => {
+    intersectionObserver(container,{ threshold: 0.02 }).then(() => {
       tl.fromTo(container,{yPercent:100}, {duration: 0.5, yPercent:0})
     .fromTo(container.children, {yPercent:-100}, {duration: 0.5, yPercent: 0}, "<")
     })
