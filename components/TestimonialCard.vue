@@ -30,9 +30,8 @@
     testimonial?:Testimonial
   }
   
-  const props = defineProps<p>();
+  defineProps<p>();
 
-  console.log(props)
 
   </script>
 

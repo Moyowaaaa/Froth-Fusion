@@ -16,6 +16,23 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+    const heroContainer = document.querySelector('.heroSection')
+    gsap.from(heroContainer?.children[1],{
+        height:'5rem',
+        ease:"power3.inOut",
+        duration:1,
+        delay:0.5,
+        scrollTrigger:{
+            trigger:heroContainer?.children[1],
+            scrub:4
+        }
+    })
+})
 
 </script>
 
@@ -46,8 +63,15 @@
         .arrow-container{
             position: absolute;
             width: 5rem;
-height: 5rem;
-top:15rem
+height: 10rem;
+
+
+top:15rem;
+
+img{
+    height: 100%;
+    width: 100%;
+}
         }
 
         .flower-container{

@@ -19,6 +19,21 @@
 </template>
 
 <script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+    const navbarContainer = document.querySelector('.navbar__container')
+
+    gsap.from(navbarContainer.children, {
+  yPercent: 200,
+  ease: "power3.inOut",
+  duration: 1.2,
+  opacity: 0,
+});
+})
 
 </script>
 
@@ -30,6 +45,10 @@
     background-color: white;
     color: black;
     box-sizing: border-box;
+    position: fixed;
+    z-index: 300;
+    max-height: max-content;
+    overflow-y: hidden;
 
     &__container{
         display: flex;

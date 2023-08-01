@@ -48,8 +48,8 @@
       height: 100%;
       background: #800080;
       display: flex;
-      align-items: end;
-      justify-content: end;
+      align-items: flex-end;
+      justify-content: flex-end;
       position: relative;
       img {
         height: 90%;

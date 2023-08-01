@@ -1,11 +1,12 @@
 <template>
   <div class="showcaseSection">
-    <img src="/images/showcase1.png" alt="" />
-    <img src="/images/showcase2.png" alt="" />
-    <img src="/images/showcase3.png" alt="" />
-    <img src="/images/showcase4.png" alt="" />
-    <img src="/images/showcase5.png" alt="" />
-    <img src="/images/showcase6.png" alt="" />
+
+    <div class="showcaseImageContainer"><img src="/images/showcase1.png" alt="" /></div>
+    <div class="showcaseImageContainer"><img src="/images/showcase2.png" alt="" /></div>
+    <div class="showcaseImageContainer"><img src="/images/showcase3.png" alt="" /></div>
+    <div class="showcaseImageContainer"><img src="/images/showcase4.png" alt="" /></div>
+    <div class="showcaseImageContainer"><img src="/images/showcase5.png" alt="" /></div>
+    <div class="showcaseImageContainer"><img src="/images/showcase6.png" alt="" /></div>
 
     <div class="text-container">
       <div class="text-container__content">
@@ -21,7 +22,60 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { intersectionObserver } from "../animations/useIntersectionObserver";
+gsap.registerPlugin(ScrollTrigger);
+
+
+onMounted(() => {
+  const textContainer = document.querySelector('.text-container__content')
+  const showcaseImageContainer = document.querySelectorAll('.showcaseImageContainer')
+
+  console.log(showcaseImageContainer)
+
+
+
+  const tl = gsap.timeline()
+  showcaseImageContainer.forEach((container) => ( 
+    intersectionObserver(container,{ threshold: 0.1 }).then(() => {
+      tl.fromTo(container,{yPercent:100}, {duration: 0.5, yPercent:0})
+    .fromTo(container.children, {yPercent:-100}, {duration: 0.5, yPercent: 0}, "<")
+    })
+  ))
+
+  tl.from(textContainer,{
+    opacity:0,
+    duration:1.5,
+    ease:"power3.inOut",
+    y:100,
+    delay:0.6,
+    scrollTrigger:{
+      trigger:textContainer,
+      
+    }
+  })
+
+
+})
+
+// statContainers.forEach((statContainer) => {
+//     intersectionObserver(statContainer, { threshold: 0.1 }).then(() => {
+//       gsap.set(statContainer, {
+//         visibility: "visible",
+//       });
+
+//       gsap.to(statContainer, {
+//         duration: 1,
+//         ease: "power3.inOut",
+
+//         scrollTrigger: {
+//           trigger: statContainer,
+//         },
+//       });
+
+</script>
 
 <style scoped lang="scss">
 .showcaseSection {
@@ -32,7 +86,16 @@
   background-color: white;
   height: 130vh;
 
-  img {
+  .showcaseImageContainer {
+    max-height: max-content;
+    overflow: hidden;
+
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
     &:nth-child(1) {
       width: 22.25rem;
       height: 27.875rem;

@@ -11,8 +11,9 @@
 </template>
 
 <script setup lang="ts">
-// import 'vue3-marquee/dist/style.css'
-import { Vue3Marquee } from 'vue3-marquee'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import noSugarImage from '/images/noSugar.svg'
 import noSugarImage2 from '/images/noSugar2.svg'
 import lowCalImage from '/images/lowCals.svg'
@@ -25,11 +26,28 @@ const marqueeData = [
     {image:lowCalImage, name: 'Low calories'},
     {image:noSugarImage2, name: 'No added Sugar'},
     {image:allNatural, name: 'Natural ingredients'},
-
-    
-
-
 ]
+
+
+onMounted(() => {
+    const marqueeContainer = document.querySelector('.marquee__container')
+
+    gsap.from(marqueeContainer, {
+    xPercent: -50,
+    opacity: 0,
+    duration: 5,
+    ease: "power3.inOut",
+    overflowX: "hidden",
+    scrollTrigger: {
+      trigger: marqueeContainer,
+      scrub: 4,
+      start: "top bottom+=20%",
+      end: "center top+=20%",
+    },
+  });
+})
+
+
 
 </script>
 

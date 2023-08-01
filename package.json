@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "@studio-freight/lenis": "^1.0.19",
     "gsap": "^3.12.2",
     "pinia": "^2.1.4",
     "sass": "^1.64.1",

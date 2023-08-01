@@ -2,16 +2,10 @@
     <section class="mainTitle">
       <div class="mainTitle__container">
         <div class="mainTitle__container--text-container">
-            <!-- <div class="title">
-                <h1>FROTH</h1>
-          <h1 class="second">FUSION</h1>
+            <div class="overflow-containers">
+              <h1>FROTH</h1>
             </div>
-
-            <div class="titleCan">
-            <img src="/images/mainCan.png" alt="" />
-            </div> -->
-
-            <h1>FROTH</h1>
+            
             <div class="can-container">
               <img src="/images/mainCan.png" alt="" />
             </div>
@@ -19,10 +13,6 @@
               <h1 class="">FUSION</h1>
             
             </div>
-
-           
-        
-          
         </div>
 
         <div class="button-container">
@@ -33,15 +23,56 @@
        
       </div>
 
-      <img src="/images/somefruit.png" class="somefruit" alt=""/>
+      <div class="image-overflow-container">
+        <img src="/images/somefruit.png" class="somefruit" alt=""/>
+      </div>
+      <div class="second-image-overflow-container">
       <img src="/images/lemon.png" class="lemon" alt=""/>
+      </div>
+      <div class="third-image-overflow-container">
       <img src="/images/strawberry.png" class="strawberry" alt=""/>
+      </div>  
     
       <!-- <Marquee /> -->
     </section>
   </template>
   
-  <script setup lang="ts"></script>
+  <script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const titleContainer = document.querySelector('.mainTitle__container--text-container')
+  console.log(titleContainer)
+
+
+  gsap.from([titleContainer?.children[1].children, '.somefruit','.lemon','.strawberry','.button-container'],{
+    yPercent: 200,
+    ease: "power3.inOut",
+    duration: 1.2,
+    opacity: 0,
+  })
+
+  gsap.from([titleContainer?.children[0].children],{
+    yPercent: 200,
+    ease: "power3.inOut",
+    duration: 1.5,
+    opacity: 0,
+    delay:0.5
+  })
+
+  gsap.from([titleContainer?.children[2].children],{
+    yPercent: 200,
+    ease: "power3.inOut",
+    duration: 1.5,
+    opacity: 0,
+    delay:0.5
+  })
+})
+
+</script>
   
   <style scoped lang="scss">
     .mainTitle {
@@ -66,10 +97,16 @@
         align-items: center;
         display: relative;
         height: 100%;
+
+        .overflow-containers{
+        
+          max-height: 20rem;
+          overflow-y: hidden;
+        }
         
 
         h1 {
-          margin-top: 5rem;
+          margin-top: 6rem;
             color: #e4e4e4;
             font-family: "grotesk";
             font-size: 13.75rem;
@@ -89,23 +126,27 @@
           }
 
           .second{
-            margin-top: -10rem;
+            margin-top: -15rem;
             z-index: 10 !important;
             position: absolute;
             width:100%;
             left: 0;
             top:30rem;
+            max-height: 20rem;
+            overflow-y: hidden;
             // text-align: center !;
           }
 
           .can-container{
             max-width: 112rem;
         margin: auto;
+        max-height: 30rem;
+        overflow-y: hidden;
         
         position: absolute;
         display: flex;
         justify-content: center;
-        top:12rem;
+        top:9rem;
         object-position: center;
         left:30rem;
 
@@ -122,9 +163,8 @@
 
 
 .button-container{
-  margin-top: 5rem;
+  margin-top: 20rem;
   width: 100%;
-
   display: flex;
   justify-content: center;
 
@@ -142,26 +182,32 @@ font-family: "grotesk";
   
            }
 
-           .somefruit{
+           .image-overflow-container{
             position: absolute;
             top: 5rem;
             width: 13rem;
             right:8rem;
             z-index: 10;
+            max-height: max-content;
+            overflow-y: hidden;
            }
 
-           .lemon{
+           .second-image-overflow-container{
             position: absolute;
             width: 15rem;
             bottom:5rem;
-            left:0rem
+            left:0rem;
+            max-height: max-content;
+            overflow-y: hidden;
            }
 
-           .strawberry{
+           .third-image-overflow-container{
             position: absolute;
             width: 15rem;
             right:0rem;
-            bottom:1rem
+            bottom:1rem;
+            max-height: max-content;
+            overflow-y: hidden;
            }
     }
   </style>
