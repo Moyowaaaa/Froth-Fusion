@@ -23,7 +23,7 @@
           </div>
           <div>
             <img src="/images/rightArrow.png" alt="" />
-            <p>${{ cartStore.totalAmountOfItemInCart }}</p>
+            <p>${{ cartStore.totalAmountOfItemInCart.toFixed(2) }}</p>
           </div>
         </div>
       </div>
