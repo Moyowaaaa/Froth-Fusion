@@ -6,7 +6,7 @@ import lemonTea from "/images/lemoTea.png";
 import peachedTea from "/images/peachedTea.png";
 
 
-export const useProductStore = defineStore("ProductStore",{
+ const useProductStore = defineStore("ProductStore",{
     state:() => {
         return {
             products: [

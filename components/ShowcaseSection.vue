@@ -1,12 +1,23 @@
 <template>
   <div class="showcaseSection">
-
-    <div class="showcaseImageContainer"><img src="/images/showcase1.png" alt="" /></div>
-    <div class="showcaseImageContainer"><img src="/images/showcase2.png" alt="" /></div>
-    <div class="showcaseImageContainer"><img src="/images/showcase3.png" alt="" /></div>
-    <div class="showcaseImageContainer"><img src="/images/showcase4.png" alt="" /></div>
-    <div class="showcaseImageContainer"><img src="/images/showcase5.png" alt="" /></div>
-    <div class="showcaseImageContainer"><img src="/images/showcase6.png" alt="" /></div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase1.png" alt="" />
+    </div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase2.png" alt="" />
+    </div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase3.png" alt="" />
+    </div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase4.png" alt="" />
+    </div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase5.png" alt="" />
+    </div>
+    <div class="showcaseImageContainer">
+      <img src="/images/showcase6.png" alt="" />
+    </div>
 
     <div class="text-container">
       <div class="text-container__content">
@@ -16,7 +27,9 @@
           benefits are well documented! Purchase one of our drinks now and
           experience the magical benefits yourself!
         </p>
-        <button>Shop now</button>
+        <button class="border-button-purple" @click="goToStoreSection()">
+          Shop now
+        </button>
       </div>
     </div>
   </div>
@@ -28,59 +41,54 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { intersectionObserver } from "../animations/useIntersectionObserver";
 gsap.registerPlugin(ScrollTrigger);
 
-
 onMounted(() => {
-  const textContainer = document.querySelector('.text-container__content')
-  const showcaseImageContainer = document.querySelectorAll('.showcaseImageContainer')
+  const textContainer = document.querySelector(".text-container__content");
+  const showcaseImageContainer = document.querySelectorAll(
+    ".showcaseImageContainer"
+  );
 
-  console.log(showcaseImageContainer)
+  console.log(showcaseImageContainer);
 
-
-
-  const tl = gsap.timeline()
-  showcaseImageContainer.forEach((container) => ( 
-    intersectionObserver(container,{ threshold: 0.02 }).then(() => {
-      tl.fromTo(container,{yPercent:100}, {duration: 0.5, yPercent:0})
-    .fromTo(container.children, {yPercent:-100}, {duration: 0.5, yPercent: 0}, "<")
+  const tl = gsap.timeline();
+  showcaseImageContainer.forEach((container) =>
+    intersectionObserver(container, { threshold: 0.02 }).then(() => {
+      tl.fromTo(
+        container,
+        { yPercent: 100 },
+        { duration: 0.5, yPercent: 0 }
+      ).fromTo(
+        container.children,
+        { yPercent: -100 },
+        { duration: 0.5, yPercent: 0 },
+        "<"
+      );
     })
-  ))
+  );
 
-  tl.from(textContainer,{
-    opacity:0,
-    duration:1.5,
-    ease:"power3.inOut",
-    y:100,
-    delay:0.6,
-    scrollTrigger:{
-      trigger:textContainer,
-      
-    }
-  })
+  tl.from(textContainer, {
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.inOut",
+    y: 100,
+    delay: 0.6,
+    scrollTrigger: {
+      trigger: textContainer,
+    },
+  });
+});
 
-
-})
-
-// statContainers.forEach((statContainer) => {
-//     intersectionObserver(statContainer, { threshold: 0.1 }).then(() => {
-//       gsap.set(statContainer, {
-//         visibility: "visible",
-//       });
-
-//       gsap.to(statContainer, {
-//         duration: 1,
-//         ease: "power3.inOut",
-
-//         scrollTrigger: {
-//           trigger: statContainer,
-//         },
-//       });
-
+const goToStoreSection = () => {
+  const shop = document.querySelector(".carouselSection");
+  if (shop) {
+    shop.scrollIntoView({ behavior: "smooth" });
+  }
+};
 </script>
 
 <style scoped lang="scss">
 .showcaseSection {
   width: 100%;
- 
+
   position: relative;
   padding-top: 2rem;
   background-color: white;
@@ -90,7 +98,7 @@ onMounted(() => {
     max-height: max-content;
     overflow: hidden;
 
-    img{
+    img {
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -149,7 +157,7 @@ onMounted(() => {
     position: absolute;
     width: 100%;
     height: 100%;
-  
+
     top: 0;
     display: flex;
     flex-direction: column;
@@ -157,33 +165,32 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
 
-    &__content{
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        
+    &__content {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
 
-        h1{
-            font-family: "grotesk";
-            font-size: 2.75rem;
-            max-width: 45rem;
-        }
+      h1 {
+        font-family: "grotesk";
+        font-size: 2.75rem;
+        max-width: 45rem;
+      }
 
-        p{
-            font-family:"maby";
-            font-size: 1.125rem;
-            max-width: 35rem;
-        }
+      p {
+        font-family: "maby";
+        font-size: 1.125rem;
+        max-width: 35rem;
+      }
 
-        button{
-            padding: 1rem 2rem;
-            border-radius: 0.3125rem;
-            background: #151515;
-            color:white;
-            font-family: "grotesk";
-            font-size: 1.5rem;
-        }
+      button {
+        padding: 1rem 2rem;
+        border-radius: 0.3125rem;
+        background: #151515;
+        color: white;
+        font-family: "grotesk";
+        font-size: 1.5rem;
+      }
     }
   }
 }

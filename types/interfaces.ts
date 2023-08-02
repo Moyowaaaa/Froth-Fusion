@@ -4,3 +4,8 @@ export interface productDetails {
     image: string,
     price: number
 }
+
+export interface Item {
+    id:number,
+    quantity:number 
+}

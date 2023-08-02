@@ -65,25 +65,23 @@ import console from "console";
   background-image: url("/images/background.png");
   box-sizing: border-box;
 
-
   &__testimonialsContainer {
     display: flex;
     width: 100%;
-   
+
     justify-content: space-between;
 
     &--first {
       width: 30%;
-      
+
       display: flex;
       flex-direction: column;
       gap: 4rem;
     }
 
     &--second {
-        width: 30%;
+      width: 30%;
 
-     
       display: flex;
       flex-direction: column;
       gap: 4rem;
@@ -91,9 +89,8 @@ import console from "console";
     }
 
     &--third {
-        width: 30%;
+      width: 30%;
 
-      
       display: flex;
       flex-direction: column;
       gap: 4rem;

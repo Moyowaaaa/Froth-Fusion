@@ -10,14 +10,13 @@
       </div>
     </div>
     <div class="miscSection__bottom-section">
-        <div class="image-container">
+      <div class="image-container">
         <img src="/images/textBubble.png" alt="" />
+      </div>
 
-        </div>
-
-        <div class="text-container">
-           <img src="/images/helloText.png" alt="" />
-        </div>
+      <div class="text-container">
+        <img src="/images/helloText.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -59,40 +58,35 @@
         bottom: 0;
       }
     }
-
   }
 
-  &__bottom-section{
-        width: 100%;
-        height: 38rem;
-        background-color: #aae759;
-        background-image: url('/images/background.png'), url('/images/palm.png');
-      box-sizing: border-box;
-      background-position: center, bottom;
-      background-repeat: no-repeat;
-      background-size: cover,auto;
-      padding: 5rem;
-      display: flex;
-     
-      .image-container{
-        width:10rem;
-        img{
+  &__bottom-section {
+    width: 100%;
+    height: 38rem;
+    background-color: #aae759;
+    background-image: url("/images/background.png"), url("/images/palm.png");
+    box-sizing: border-box;
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+    background-size: cover, auto;
+    padding: 5rem;
+    display: flex;
+
+    .image-container {
+      width: 10rem;
+      img {
         width: 5rem;
         height: 5rem;
       }
-      }
-
-      .text-container{
-        margin-left: 2rem;
-        margin-top: 5rem;
-        width: 56.3735rem;
-height: 17.30144rem;
-        color: black;
-      }
-
-
-
-    
     }
+
+    .text-container {
+      margin-left: 2rem;
+      margin-top: 5rem;
+      width: 56.3735rem;
+      height: 17.30144rem;
+      color: black;
+    }
+  }
 }
 </style>

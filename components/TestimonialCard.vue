@@ -1,39 +1,35 @@
 <template>
-    <div class="testimonialCard">
-      <img src="/images/quote.svg" alt="" class="quote" />
-      <p>{{testimonial?.text}}</p>
-  
-      <div class="testimonialCard__customer">
-        <div class="testimonialCard__customer--account">
-          <img src="/images/avatar.svg" alt="" />
-          <div>
-            <p style="font-weight: bold;">{{testimonial?.name}}</p>
-            <p>{{ testimonial?.position }}</p>
-          </div>
+  <div class="testimonialCard">
+    <img src="/images/quote.svg" alt="" class="quote" />
+    <p>{{ testimonial?.text }}</p>
+
+    <div class="testimonialCard__customer">
+      <div class="testimonialCard__customer--account">
+        <img src="/images/avatar.svg" alt="" />
+        <div>
+          <p style="font-weight: bold">{{ testimonial?.name }}</p>
+          <p>{{ testimonial?.position }}</p>
         </div>
-  
-        <img src="/images/stars.svg" alt="" />
       </div>
+
+      <img src="/images/stars.svg" alt="" />
     </div>
-  </template>
-  
-  <script setup lang="ts">
- 
-  
-  interface Testimonial {
-    text?: string;
-    name?: string;
-    position?: string;
-  }
+  </div>
+</template>
 
-  interface p {
-    testimonial?:Testimonial
-  }
-  
-  defineProps<p>();
+<script setup lang="ts">
+interface Testimonial {
+  text?: string;
+  name?: string;
+  position?: string;
+}
 
+interface p {
+  testimonial?: Testimonial;
+}
 
-  </script>
+defineProps<p>();
+</script>
 
 <style scoped lang="scss">
 .testimonialCard {
@@ -51,52 +47,44 @@
   font-size: 1rem;
   position: relative;
 
-  .quote{
+  .quote {
     position: absolute;
-    top:2rem;
+    top: 2rem;
     width: 1.5rem;
   }
 
-
-  p{
-    
-        margin-top: 3rem;
-        padding-left:2rem;
-    
-
-   
+  p {
+    margin-top: 3rem;
+    padding-left: 2rem;
   }
 
-
-  &__customer{
+  &__customer {
     display: flex;
     width: 100%;
-   
+
     display: flex;
     justify-content: space-between;
 
-    img{
-        width: 4rem;
+    img {
+      width: 4rem;
 
-        &:nth-child(1){
-            width: 2rem;
-        }
+      &:nth-child(1) {
+        width: 2rem;
+      }
     }
 
-    &--account{
+    &--account {
+      display: flex;
+      gap: 0.5rem;
+
+      div {
         display: flex;
-        gap:0.5rem;
-
-        div{
-            display: flex;
-            flex-direction: column;
-           p{
-            margin: 0;
-            padding: 0;
-
-
-           }
+        flex-direction: column;
+        p {
+          margin: 0;
+          padding: 0;
         }
+      }
     }
   }
 }

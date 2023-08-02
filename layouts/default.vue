@@ -1,16 +1,16 @@
 <template>
-<div class="defaultLayout">
+  <div class="defaultLayout">
     <Navbar />
     <div class="defaultLayout__content">
-        <slot />
+      <slot />
     </div>
     <Footer />
-   
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.defaultLayout {
+}
 </style>

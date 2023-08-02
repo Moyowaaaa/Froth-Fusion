@@ -1,0 +1,61 @@
+import { defineStore, acceptHMRUpdate } from "pinia";
+
+
+
+const useToastStore = defineStore('ToastStore', {
+    state:() => ({
+        message: '',
+        color:'',
+        show:false
+    }),
+
+    actions:{
+        addedItem(){
+            this.message = 'Added Item To cart',
+            this.color = '#AAE759',
+            this.show = true,
+
+            setTimeout(() => {
+                this.message = '',
+                this.color = '',
+                this.show = false
+            },4000)
+        },
+        increasedItem() {
+            this.message = 'Increased item quantity',
+            this.color = 'teal',
+            this.show = true,
+
+            setTimeout(() => {
+                this.message = '',
+                this.color = '',
+                this.show = false
+            },4000)
+        },
+        decreasedItem() {
+            this.message = 'Decreased item quantity',
+            this.color = '#ead00d',
+            this.show = true,
+
+            setTimeout(() => {
+                this.message = '',
+                this.color = '',
+                this.show = false
+            },4000)
+        },
+        removedItem() {
+            this.message = 'Item removed from cart',
+            this.color = '#e64747',
+            this.show = true,
+
+            setTimeout(() => {
+                this.message = '',
+                this.color = '',
+                this.show = false
+            },4000)
+        }
+    }
+})
+
+
+export default useToastStore;
