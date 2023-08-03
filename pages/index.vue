@@ -33,6 +33,16 @@ if (process.client) {
 
   requestAnimationFrame(scrollFn);
 }
+
+useSeoMeta({
+  title: 'Froth Fusion',
+  ogTitle: 'Froth Fusion',
+  description: 'Explore Froth-Fusion drink options, a drink for everyone.',
+  ogDescription: 'Explore Froth-Fusion drink options, a drink for everyone.',
+  ogImage: '/images/favicon.ico',
+  twitterCard: '/images/favicon.ico',
+})
+
 </script>
 
 <style scoped lang="scss"></style>

@@ -3,6 +3,7 @@ export interface productDetails {
     name: string,
     image: string,
     price: number
+    accentColor?:string
 }
 
 export interface Item {

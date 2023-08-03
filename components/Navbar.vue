@@ -27,6 +27,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useCartStore from "../stores/CartStore";
+import useToastStore from "../stores/ToastStore";
 
 const cartStore = useCartStore();
 gsap.registerPlugin(ScrollTrigger);

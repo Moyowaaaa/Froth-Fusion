@@ -1,6 +1,6 @@
 <template>
   <Transition name="fade">
-    <div class="toast-component" v-if="statusvisible">
+    <div class="toast-component" :style="{boxShadow: `4px 2px 0px ${statusColor}`}" v-if="statusvisible">
       <div class="toast-component__container">
         <p :style="{ color: `${statusColor}` }">{{ status }}</p>
 
@@ -55,7 +55,7 @@ watchEffect(() => {
   top: 6rem;
   z-index: 30;
   left: 2rem;
-
+  border-radius: 5px;
   width: max-content;
   padding: 0.5rem 1rem;
   height: max-content;
@@ -66,7 +66,7 @@ watchEffect(() => {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 0.5rem;
     font-family: "grotesk";
 
     p {
