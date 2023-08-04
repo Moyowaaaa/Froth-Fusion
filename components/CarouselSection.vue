@@ -16,13 +16,15 @@
       >
         <Slide v-for="product in productStore.products" :key="product.id">
           <div class="carousel__item">
-          
             <CarouselCard
               :product="product"
               :activeSlide="currentSlide"
               @addToCart="addToCart"
             />
-            <button :style="{boxShadow: `4px 2px 0px ${product.accentColor}`}" @click="addToCart(product)">
+            <button
+              :style="{ boxShadow: `4px 2px 0px ${product.accentColor}` }"
+              @click="addToCart(product)"
+            >
               Add to cart
             </button>
           </div>
@@ -169,11 +171,9 @@ const previous = () => {
     border-radius: 0.3125rem;
 
     &:hover {
-    box-shadow: none !important;
-    transition: all 1s;
-  }
-
-
+      box-shadow: none !important;
+      transition: all 1s;
+    }
   }
 }
 
@@ -188,9 +188,8 @@ const previous = () => {
   position: absolute;
   width: 6rem;
   top: 20rem;
-  
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     left: 1rem;
   }
@@ -201,7 +200,7 @@ const previous = () => {
   width: 6rem;
   top: 20rem;
   right: 2rem;
-  &:hover{
+  &:hover {
     cursor: pointer;
     right: 1rem;
   }
