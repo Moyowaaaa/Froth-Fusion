@@ -111,4 +111,26 @@
     }
   }
 }
+
+@media screen and (min-width: 495px) and (max-width: 1022px) {
+  .testimonialsSection {
+    padding: 2rem 0;
+    &__testimonialsContainer {
+      // flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    div {
+      min-width: 49%;
+      // margin: auto;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      justify-content: flex-start;
+
+      &:nth-child(3) {
+        display: flex;
+      }
+    }
+  }
+}
 </style>

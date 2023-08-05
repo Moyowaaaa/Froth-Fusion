@@ -33,7 +33,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useCartStore from "../stores/CartStore";
-import useToastStore from "../stores/ToastStore";
 
 const cartStore = useCartStore();
 gsap.registerPlugin(ScrollTrigger);
@@ -129,10 +128,16 @@ let toggleCart = () => {
       }
 
       .mobile-cart {
+        display: flex;
         font-size: 1rem;
         font-family: "grotesk";
       }
     }
+  }
+}
+@media screen and (min-width: 495px) and (max-width: 1020px) {
+  .navbar {
+    padding: 0 1rem;
   }
 }
 </style>

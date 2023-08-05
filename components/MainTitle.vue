@@ -246,4 +246,32 @@ const goToStoreSection = () => {
     display: none;
   }
 }
+@media screen and (min-width: 495px) and (max-width: 1020px) {
+  .mainTitle {
+    overflow-x: hidden;
+    &__container {
+      max-width: 100%;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      h1 {
+        font-size: 10rem;
+        // max-width: ;
+      }
+    }
+  }
+  .can-container {
+    left: 0rem !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+    img {
+      width: 20rem;
+    }
+  }
+  .somefruit {
+    display: none;
+  }
+}
 </style>

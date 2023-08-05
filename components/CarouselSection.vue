@@ -71,7 +71,13 @@ const previous = () => {
 const updateItemsToShow = () => {
   const viewportWidth = window.innerWidth;
 
-  itemsToShow.value = viewportWidth <= 480 ? 1 : 3.95;
+  if (viewportWidth <= 480) {
+    itemsToShow.value = 1;
+  } else if (viewportWidth > 480 && viewportWidth <= 1020) {
+    itemsToShow.value = 2;
+  } else {
+    itemsToShow.value = 3.95;
+  }
 };
 
 onMounted(() => {
@@ -221,7 +227,7 @@ onBeforeUnmount(() => {
 
 @media screen and (max-width: 485px) {
   .carouselSection {
-    min-height: 110vh;
+    min-height: 130vh;
     height: max-content;
     &__text-container {
       max-width: 100%;
@@ -262,7 +268,7 @@ onBeforeUnmount(() => {
       width: max-content;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 4rem;
+      margin-top: 10rem;
       font-size: 1rem !important;
     }
   }

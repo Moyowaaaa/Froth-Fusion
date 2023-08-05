@@ -151,7 +151,7 @@ onMounted(() => {
   }
 }
 
-@media screen and (max-width: 485px) {
+@media screen and (max-width: 1020px) {
   .footer {
     padding: 1rem;
 

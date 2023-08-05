@@ -41,39 +41,39 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { intersectionObserver } from "../animations/useIntersectionObserver";
 gsap.registerPlugin(ScrollTrigger);
 
-onMounted(() => {
-  const textContainer = document.querySelector(".text-container__content");
-  const showcaseImageContainer = document.querySelectorAll(
-    ".showcaseImageContainer"
-  );
+// onMounted(() => {
+//   const textContainer = document.querySelector(".text-container__content");
+//   const showcaseImageContainer = document.querySelectorAll(
+//     ".showcaseImageContainer"
+//   );
 
-  const tl = gsap.timeline();
-  showcaseImageContainer.forEach((container) =>
-    intersectionObserver(container, { threshold: 0.02 }).then(() => {
-      tl.fromTo(
-        container,
-        { yPercent: 100 },
-        { duration: 0.5, yPercent: 0 }
-      ).fromTo(
-        container.children,
-        { yPercent: -100 },
-        { duration: 0.5, yPercent: 0 },
-        "<"
-      );
-    })
-  );
+//   const tl = gsap.timeline();
+//   showcaseImageContainer.forEach((container) =>
+//     intersectionObserver(container, { threshold: 0.02 }).then(() => {
+//       tl.fromTo(
+//         container,
+//         { yPercent: 100 },
+//         { duration: 0.5, yPercent: 0 }
+//       ).fromTo(
+//         container.children,
+//         { yPercent: -100 },
+//         { duration: 0.5, yPercent: 0 },
+//         "<"
+//       );
+//     })
+//   );
 
-  tl.from(textContainer, {
-    opacity: 0,
-    duration: 1.5,
-    ease: "power3.inOut",
-    y: 100,
-    delay: 0.6,
-    scrollTrigger: {
-      trigger: textContainer,
-    },
-  });
-});
+//   tl.from(textContainer, {
+//     opacity: 0,
+//     duration: 1.5,
+//     ease: "power3.inOut",
+//     y: 100,
+//     delay: 0.6,
+//     scrollTrigger: {
+//       trigger: textContainer,
+//     },
+//   });
+// });
 
 const goToStoreSection = () => {
   const shop = document.querySelector(".carouselSection");
@@ -207,6 +207,47 @@ const goToStoreSection = () => {
   .text-container {
     h1 {
       max-width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 495px) and (max-width: 1020px) {
+  .showcaseSection {
+    width: 100%;
+    height: 100vh;
+  }
+  .showcaseImageContainer {
+    // display: none;
+    img {
+      transform: scale(0.5);
+      border: 2px solid red;
+    }
+    &:nth-child(1) {
+      left: -5rem !important;
+      top: -5rem !important;
+      position: absolute;
+    }
+    &:nth-child(2) {
+      left: 15rem !important;
+      top: 2rem !important;
+      position: absolute;
+    }
+
+    &:nth-child(4) {
+      left: 1rem !important;
+      bottom: 5rem !important;
+      position: absolute;
+    }
+
+    &:nth-child(6) {
+      right: 1rem !important;
+      bottom: 5rem !important;
+      position: absolute;
+    }
+
+    &:nth-child(5) {
+      left: 15rem !important;
+      bottom: 2rem !important;
+      position: absolute;
     }
   }
 }

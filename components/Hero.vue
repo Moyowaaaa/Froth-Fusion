@@ -92,4 +92,13 @@ onMounted(() => {
     display: none;
   }
 }
+@media screen and (min-width: 495px) and (max-width: 1022px) {
+  .heroSection {
+    padding: 4rem 0;
+
+    .arrow-container {
+      margin-top: 6rem;
+    }
+  }
+}
 </style>

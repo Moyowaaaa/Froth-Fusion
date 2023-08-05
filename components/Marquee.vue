@@ -53,7 +53,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .marquee {
   // padding: 2rem 1rem;
-  padding: 1rem 2rem;
+
   background-color: white;
   width: 100%;
   position: relative;
@@ -80,6 +80,9 @@ onMounted(() => {
       }
     }
   }
+  @media screen and (min-width: 1020px) {
+    padding: 1rem 2rem;
+  }
 }
 
 @media screen and (max-width: 485px) {
@@ -87,6 +90,15 @@ onMounted(() => {
     max-width: 100%;
     padding: 1rem 0rem;
     overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 495px) and (max-width: 1020px) {
+  .marquee {
+    max-width: 100%;
+    // padding: 1rem 0rem;
+    overflow-x: scroll;
+    // display: ;
   }
 }
 </style>

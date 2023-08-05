@@ -69,27 +69,15 @@ const handleClick = () => {
     min-height: 20rem !important;
     height: 30rem !important;
 
+    &__image-container {
+      margin-top: 2rem;
+      min-width: 25rem;
+      min-height: 28rem;
+    }
+
     &__title-container {
       font-size: 1.5rem;
     }
   }
 }
 </style>
-
-<!-- <template>
-    <div class="card">
-
-    </div>
-</template>
-
-<script setup lang="ts">
-
-</script>
-
-<style scoped lang="scss">
-.card{
-    height:30rem;
-    width: 20rem !important;
-    border: 2px solid black;
-}
-</style> -->
