@@ -227,12 +227,15 @@ onBeforeUnmount(() => {
 
 @media screen and (max-width: 485px) {
   .carouselSection {
-    min-height: 130vh;
+    min-height: 130dvh;
+    padding: 2rem 0;
+
     height: max-content;
     &__text-container {
       max-width: 100%;
       width: 100%;
       font-size: 1rem;
+      text-align: center;
     }
   }
   .leftArrow {
