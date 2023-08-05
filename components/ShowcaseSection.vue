@@ -47,8 +47,6 @@ onMounted(() => {
     ".showcaseImageContainer"
   );
 
-  console.log(showcaseImageContainer);
-
   const tl = gsap.timeline();
   showcaseImageContainer.forEach((container) =>
     intersectionObserver(container, { threshold: 0.02 }).then(() => {
@@ -191,6 +189,24 @@ const goToStoreSection = () => {
         font-family: "grotesk";
         font-size: 1.5rem;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .showcaseSection {
+    width: 100%;
+    height: 100vh;
+  }
+  .showcaseImageContainer {
+    display: none;
+    img {
+      display: none;
+    }
+  }
+  .text-container {
+    h1 {
+      max-width: 100%;
     }
   }
 }

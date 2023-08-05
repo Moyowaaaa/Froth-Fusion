@@ -150,4 +150,37 @@ onMounted(() => {
     font-weight: 500;
   }
 }
+
+@media screen and (max-width: 485px) {
+  .footer {
+    padding: 1rem;
+
+    &__top-section {
+      // flex-direction: column;
+      flex-wrap: wrap;
+      div {
+        width: auto;
+      }
+      &--first {
+        width: 100%;
+
+        &__input-container {
+          button {
+            font-size: 0.8rem;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+
+    &__bottom-section {
+      flex-direction: column;
+      p {
+        &:nth-child(2) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 </style>

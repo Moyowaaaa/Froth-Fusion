@@ -67,14 +67,25 @@ defineProps(["product"]);
     }
   }
 
-  button{
+  button {
     background: transparent;
     outline: none;
     border: none;
     border: 2px solid transparent;
 
-    &:hover{
+    &:hover {
       border-bottom: 2px solid black;
+    }
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .cartItem {
+    &__image-container {
+      min-height: 8rem;
+      max-height: 8rem;
+      min-width: 8rem;
+      max-width: 8rem;
     }
   }
 }

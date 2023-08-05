@@ -28,6 +28,9 @@ const marqueeData = [
 ];
 
 onMounted(() => {
+  const viewportWidth = window.innerWidth;
+
+  // if (viewportWidth > 480) {
   const marqueeContainer = document.querySelector(".marquee__container");
 
   gsap.from(marqueeContainer, {
@@ -43,6 +46,7 @@ onMounted(() => {
       end: "center top+=20%",
     },
   });
+  // }
 });
 </script>
 
@@ -75,6 +79,14 @@ onMounted(() => {
         font-family: "doctor-glitch";
       }
     }
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .marquee {
+    max-width: 100%;
+    padding: 1rem 0rem;
+    overflow-x: scroll;
   }
 }
 </style>

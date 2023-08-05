@@ -89,4 +89,36 @@
     }
   }
 }
+
+@media screen and (max-width: 485px) {
+  .miscSection {
+    &__top-section {
+      width: 100%;
+      overflow-x: scroll;
+
+      div {
+        min-width: 90%;
+      }
+    }
+
+    &__bottom-section {
+      flex-direction: column;
+      gap: 4rem;
+      padding: 0;
+      height: max-content;
+      padding-top: 2rem;
+      background-attachment: fixed;
+      background-size: cover, 15rem;
+
+      .image-container {
+        padding-left: 2rem;
+      }
+      .text-container {
+        width: 100%;
+        // height: 50rem;
+        margin: 0 !important;
+      }
+    }
+  }
+}
 </style>

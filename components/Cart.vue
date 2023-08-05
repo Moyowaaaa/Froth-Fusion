@@ -113,4 +113,17 @@ const cartStore = useCartStore();
   transform: translateX(20px);
   opacity: 0;
 }
+
+@media screen and (max-width: 490px) {
+  .cart {
+    width: 100%;
+    &__container {
+      .top {
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
 </style>

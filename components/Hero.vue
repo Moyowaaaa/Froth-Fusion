@@ -77,4 +77,19 @@ onMounted(() => {
     right: 8rem;
   }
 }
+
+@media screen and (max-width: 485px) {
+  .heroSection {
+    padding: 4rem 0;
+    &__text-container {
+      font-size: 2rem;
+      max-width: 100%;
+    }
+  }
+
+  .flower-container,
+  .arrow-container {
+    display: none;
+  }
+}
 </style>

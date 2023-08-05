@@ -21,7 +21,7 @@ defineEmits();
 
 const handleClick = () => {
   // Do something without emitting an event
-  console.log("Clicked without emitting an event");
+  // console.log("Clicked without emitting an event");
 };
 </script>
 
@@ -61,6 +61,17 @@ const handleClick = () => {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .carouselCard {
+    min-height: 20rem !important;
+    height: 30rem !important;
+
+    &__title-container {
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

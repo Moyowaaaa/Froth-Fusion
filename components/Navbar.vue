@@ -17,6 +17,12 @@
           </span>
         </p>
       </div>
+      <div class="mobile-cart" @click="toggleCart()">
+        Cart
+        <span class="count">
+          {{ cartStore.itemsInCart }}
+        </span>
+      </div>
     </div>
 
     <Cart v-if="showCart" @toggleCart="toggleCart()" />
@@ -105,6 +111,27 @@ let toggleCart = () => {
       color: black;
       font-family: "grotesk";
       cursor: pointer;
+    }
+  }
+}
+
+.mobile-cart {
+  display: none;
+}
+
+@media screen and (max-width: 485px) {
+  .navbar {
+    padding: 0 1rem;
+
+    &__container {
+      &--links-container {
+        display: none;
+      }
+
+      .mobile-cart {
+        font-size: 1rem;
+        font-family: "grotesk";
+      }
     }
   }
 }

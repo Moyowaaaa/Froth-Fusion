@@ -43,7 +43,6 @@ onMounted(() => {
   const titleContainer = document.querySelector(
     ".mainTitle__container--text-container"
   );
-  console.log(titleContainer);
 
   gsap.from(
     [
@@ -209,6 +208,42 @@ const goToStoreSection = () => {
     bottom: 1rem;
     max-height: max-content;
     overflow-y: hidden;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .mainTitle {
+    overflow-x: hidden;
+    &__container {
+      max-width: 100%;
+      padding-top: 4rem;
+      h1 {
+        font-size: 4rem;
+        // max-width: ;
+      }
+
+      .second {
+        // margin-top: -20rem;
+        top: 28rem;
+      }
+      .can-container {
+        left: 0rem !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+
+        img {
+          width: 20rem;
+        }
+      }
+    }
+  }
+
+  .somefruit,
+  .lemon,
+  .strawberry {
+    display: none;
   }
 }
 </style>

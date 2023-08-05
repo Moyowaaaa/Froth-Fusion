@@ -1,6 +1,10 @@
 <template>
   <Transition name="fade">
-    <div class="toast-component" :style="{boxShadow: `4px 2px 0px ${statusColor}`}" v-if="statusvisible">
+    <div
+      class="toast-component"
+      :style="{ boxShadow: `4px 2px 0px ${statusColor}` }"
+      v-if="statusvisible"
+    >
       <div class="toast-component__container">
         <p :style="{ color: `${statusColor}` }">{{ status }}</p>
 
@@ -38,8 +42,6 @@ const toastStore = useToastStore();
 const status = ref("");
 const statusColor = ref("");
 const statusvisible = ref(false);
-
-console.log(toastStore.show);
 
 watchEffect(() => {
   const { message, show, color } = useToastStore();

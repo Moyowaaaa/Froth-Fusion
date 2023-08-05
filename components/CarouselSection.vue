@@ -9,7 +9,7 @@
 
     <div class="slide-container">
       <Carousel
-        :items-to-show="3.95"
+        :items-to-show="itemsToShow"
         :wrapAround="true"
         :transition="500"
         v-model="currentSlide"
@@ -45,19 +45,18 @@
 <script setup lang="ts">
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide } from "vue3-carousel";
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import useProductStore from "../stores/ProductStore";
 import useCartStore from "../stores/CartStore";
 import useToastStore from "../stores/ToastStore";
 import { productDetails } from "types/interfaces";
+
 const productStore = useProductStore();
 const cartStore = useCartStore();
 const toastStore = useToastStore();
 const currentSlide = ref<number>(1);
-
-// Function to handle addToCart event from child component
+const itemsToShow = ref<number>(1);
 const addToCart = (product: productDetails) => {
-  console.log("Adding to cart:", product);
   cartStore.addItemToCart(product.id, 1);
 };
 
@@ -68,8 +67,22 @@ const next = () => {
 const previous = () => {
   currentSlide.value -= 1;
 };
-</script>
 
+const updateItemsToShow = () => {
+  const viewportWidth = window.innerWidth;
+
+  itemsToShow.value = viewportWidth <= 480 ? 1 : 3.95;
+};
+
+onMounted(() => {
+  updateItemsToShow();
+  window.addEventListener("resize", updateItemsToShow);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateItemsToShow);
+});
+</script>
 <style scoped lang="scss">
 .carouselSection {
   min-height: 120vh;
@@ -203,6 +216,69 @@ const previous = () => {
   &:hover {
     cursor: pointer;
     right: 1rem;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .carouselSection {
+    min-height: 110vh;
+    height: max-content;
+    &__text-container {
+      max-width: 100%;
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  .leftArrow {
+    position: absolute;
+    width: 6rem;
+    top: 22rem;
+    left: 0;
+
+    &:hover {
+      cursor: pointer;
+      left: 1rem;
+    }
+  }
+
+  .rightArrow {
+    position: absolute;
+    width: 6rem;
+    top: 22rem;
+    right: 0;
+    &:hover {
+      cursor: pointer;
+      right: 1rem;
+    }
+  }
+
+  .carousel__slide {
+    // display: ;
+  }
+
+  .carousel__slide--active {
+    button {
+      position: relative;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 4rem;
+      font-size: 1rem !important;
+    }
+  }
+
+  .carousel__slide--active ~ .carousel__slide {
+    // display: none;
+    margin: 0 !important;
+  }
+
+  .carousel__slide--next {
+    // display: none;
+    margin: 0 !important;
+  }
+  .carousel__slide--prev {
+    // display: none;
+    margin: 0 !important;
   }
 }
 </style>

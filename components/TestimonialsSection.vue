@@ -53,9 +53,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import console from "console";
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 .testimonialsSection {
@@ -94,6 +92,22 @@ import console from "console";
       display: flex;
       flex-direction: column;
       gap: 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .testimonialsSection {
+    padding: 2rem 0;
+    &__testimonialsContainer {
+      flex-direction: column;
+
+      div {
+        width: 90%;
+        margin: auto;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
     }
   }
 }
