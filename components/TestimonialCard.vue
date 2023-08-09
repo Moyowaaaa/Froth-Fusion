@@ -18,17 +18,17 @@
 </template>
 
 <script setup lang="ts">
-interface Testimonial {
-  text?: string;
-  name?: string;
-  position?: string;
+type Testimonial = {
+  text: string;
+  name: string;
+  position: string;
+};
+
+interface testimony {
+  testimonial: Testimonial;
 }
 
-interface p {
-  testimonial?: Testimonial;
-}
-
-defineProps<p>();
+defineProps<testimony>();
 </script>
 
 <style scoped lang="scss">

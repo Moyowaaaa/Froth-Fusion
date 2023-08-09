@@ -30,7 +30,6 @@ const marqueeData = [
 onMounted(() => {
   const viewportWidth = window.innerWidth;
 
-  // if (viewportWidth > 480) {
   const marqueeContainer = document.querySelector(".marquee__container");
 
   gsap.from(marqueeContainer, {
@@ -46,7 +45,6 @@ onMounted(() => {
       end: "center top+=20%",
     },
   });
-  // }
 });
 </script>
 

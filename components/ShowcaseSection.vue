@@ -41,40 +41,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { intersectionObserver } from "../animations/useIntersectionObserver";
 gsap.registerPlugin(ScrollTrigger);
 
-// onMounted(() => {
-//   const textContainer = document.querySelector(".text-container__content");
-//   const showcaseImageContainer = document.querySelectorAll(
-//     ".showcaseImageContainer"
-//   );
-
-//   const tl = gsap.timeline();
-//   showcaseImageContainer.forEach((container) =>
-//     intersectionObserver(container, { threshold: 0.02 }).then(() => {
-//       tl.fromTo(
-//         container,
-//         { yPercent: 100 },
-//         { duration: 0.5, yPercent: 0 }
-//       ).fromTo(
-//         container.children,
-//         { yPercent: -100 },
-//         { duration: 0.5, yPercent: 0 },
-//         "<"
-//       );
-//     })
-//   );
-
-//   tl.from(textContainer, {
-//     opacity: 0,
-//     duration: 1.5,
-//     ease: "power3.inOut",
-//     y: 100,
-//     delay: 0.6,
-//     scrollTrigger: {
-//       trigger: textContainer,
-//     },
-//   });
-// });
-
 const goToStoreSection = () => {
   const shop = document.querySelector(".carouselSection");
   if (shop) {
@@ -196,7 +162,9 @@ const goToStoreSection = () => {
 @media screen and (max-width: 485px) {
   .showcaseSection {
     width: 100%;
-    height: 100vh;
+    height: 40rem;
+    display: flex;
+    align-items: center;
   }
   .showcaseImageContainer {
     display: none;
