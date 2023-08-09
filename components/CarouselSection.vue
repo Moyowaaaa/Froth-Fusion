@@ -290,4 +290,35 @@ onBeforeUnmount(() => {
     margin: 0 !important;
   }
 }
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  /* CSS rules specific to iPhone X */
+  .carouselSection {
+    min-height: 145dvh;
+    padding: 2rem 0;
+
+    .leftArrow {
+      position: absolute;
+      width: 6rem;
+      top: 30rem;
+      left: 0;
+
+      &:hover {
+        cursor: pointer;
+        left: 1rem;
+      }
+    }
+
+    .rightArrow {
+      position: absolute;
+      width: 6rem;
+      top: 30rem;
+      right: 0;
+      &:hover {
+        cursor: pointer;
+        right: 1rem;
+      }
+    }
+  }
+}
 </style>
