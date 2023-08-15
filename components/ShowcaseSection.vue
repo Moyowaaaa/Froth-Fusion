@@ -47,6 +47,44 @@ const goToStoreSection = () => {
     shop.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+onMounted(() => {
+  const viewportWidth = window.innerWidth;
+  const textContainer = document.querySelector(".text-container__content");
+  const showcaseImageContainer = document.querySelectorAll(
+    ".showcaseImageContainer"
+  );
+
+  const tl = gsap.timeline();
+
+  if (viewportWidth > 500) {
+    showcaseImageContainer.forEach((container) =>
+      intersectionObserver(container, { threshold: 0.02 }).then(() => {
+        tl.fromTo(
+          container,
+          { yPercent: 100 },
+          { duration: 0.5, yPercent: 0 }
+        ).fromTo(
+          container.children,
+          { yPercent: -100 },
+          { duration: 0.5, yPercent: 0 },
+          "<"
+        );
+      })
+    );
+
+    tl.from(textContainer, {
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.inOut",
+      y: 100,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: textContainer,
+      },
+    });
+  }
+});
 </script>
 
 <style scoped lang="scss">
