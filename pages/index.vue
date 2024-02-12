@@ -41,9 +41,9 @@ useSeoMeta({
   description: "Explore Froth-Fusion drink options, a drink for everyone.",
   ogDescription: "Explore Froth-Fusion drink options, a drink for everyone.",
   ogImage:
-    "https://res.cloudinary.com/dyap7epew/image/upload/q_auto,f_auto/v1707733544/projects/vxbvgnmyjwjghv5rnpde.png",
+    "https://res.cloudinary.com/dyap7epew/image/upload/v1707733544/projects/vxbvgnmyjwjghv5rnpde.png",
   twitterImage:
-    "https://res.cloudinary.com/dyap7epew/image/upload/q_auto,f_auto/v1707733544/projects/vxbvgnmyjwjghv5rnpde.png",
+    "https://res.cloudinary.com/dyap7epew/image/upload/v1707733544/projects/vxbvgnmyjwjghv5rnpde.png",
 });
 </script>
 
