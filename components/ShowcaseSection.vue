@@ -60,22 +60,23 @@ onMounted(() => {
   if (viewportWidth > 500) {
     showcaseImageContainer.forEach((container) =>
       intersectionObserver(container, { threshold: 0.02 }).then(() => {
-        tl.fromTo(
+        gsap.fromTo(
           container,
           { yPercent: 100 },
-          { duration: 0.5, yPercent: 0 }
-        ).fromTo(
-          container.children,
-          { yPercent: -100 },
-          { duration: 0.5, yPercent: 0 },
-          "<"
-        );
+          { duration: 0.8, yPercent: 0 }
+        ),
+          gsap.fromTo(
+            container.children,
+            { yPercent: -100 },
+            { duration: 0.8, yPercent: 0 },
+            "<"
+          );
       })
     );
 
-    tl.from(textContainer, {
+    gsap.from(textContainer && textContainer?.children, {
       opacity: 0,
-      duration: 1.5,
+      duration: 1,
       ease: "power3.inOut",
       y: 100,
       delay: 0.6,
@@ -172,6 +173,8 @@ onMounted(() => {
       text-align: center;
       flex-direction: column;
       align-items: center;
+      overflow-y: hidden;
+      height: max-content;
 
       h1 {
         font-family: "grotesk";
