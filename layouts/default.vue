@@ -49,13 +49,6 @@ onMounted(() => {
         document.querySelector("#defaultLayout");
       if (container) {
         container.style.display = "block";
-        gsap.set("#defaultLayout", {
-          autoAlpha: 0,
-        });
-        gsap.to("#defaultLayout", {
-          delay: 0.2,
-          autoAlpha: 1,
-        });
       }
     });
   });
