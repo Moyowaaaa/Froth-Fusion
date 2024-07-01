@@ -13,6 +13,7 @@ import groteskFont from "/fonts/DTGetaiGroteskDisplay-Black.otf";
 import mabyFont from "/fonts/MabryPro-Regular.ttf";
 import doctorGlitch from "/fonts/doctor.otf";
 import mabyMd from "/fonts/MabryPro-Medium.ttf";
+import { gsap } from "gsap";
 
 import titleCan from "/images/mainCan.png";
 import titleImage1 from "/images/somefruit.png";
@@ -44,6 +45,14 @@ onMounted(() => {
       handwriting.load().then(resolve, reject);
     });
     Promise.all(promises).then(() => {
+      gsap.set("#defaultLayout", {
+        autoAlpha: 0,
+      });
+      gsap.to("#defaultLayout", {
+        delay: 0.2,
+        autoAlpha: 1,
+      });
+
       const container: HTMLDivElement | null =
         document.querySelector("#defaultLayout");
       if (container) {

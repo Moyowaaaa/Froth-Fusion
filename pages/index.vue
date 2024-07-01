@@ -45,6 +45,17 @@ useSeoMeta({
   twitterImage:
     "https://res.cloudinary.com/dyap7epew/image/upload/v1707733544/projects/vxbvgnmyjwjghv5rnpde.png",
 });
+
+// onMounted(() => {
+//   const timeline = gsap.timeline({ delay: 0.5 });
+//   gsap.set("#home", {
+//     autoAlpha: 0,
+//   });
+//   gsap.to("#home", {
+//     delay: 0.2,
+//     autoAlpha: 1,
+//   });
+// });
 </script>
 
 <style scoped lang="scss">
