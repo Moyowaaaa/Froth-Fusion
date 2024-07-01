@@ -57,6 +57,7 @@ onMounted(() => {
       ease: "power3.inOut",
       duration: 1.2,
       opacity: 0,
+      delay: 1,
     }
   );
 
@@ -65,7 +66,7 @@ onMounted(() => {
     ease: "power3.inOut",
     duration: 1.5,
     opacity: 0,
-    delay: 0.5,
+    delay: 1.2,
   });
 
   gsap.from([titleContainer?.children[2].children], {
@@ -73,7 +74,7 @@ onMounted(() => {
     ease: "power3.inOut",
     duration: 1.5,
     opacity: 0,
-    delay: 0.5,
+    delay: 1.2,
   });
 });
 

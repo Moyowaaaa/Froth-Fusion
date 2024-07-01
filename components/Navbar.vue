@@ -47,6 +47,7 @@ onMounted(() => {
     ease: "power3.inOut",
     duration: 1.2,
     opacity: 0,
+    delay: 1,
   });
 });
 

@@ -45,18 +45,17 @@ onMounted(() => {
       handwriting.load().then(resolve, reject);
     });
     Promise.all(promises).then(() => {
-      gsap.set("#defaultLayout", {
-        autoAlpha: 0,
-      });
-      gsap.to("#defaultLayout", {
-        delay: 0.2,
-        autoAlpha: 1,
-      });
-
       const container: HTMLDivElement | null =
         document.querySelector("#defaultLayout");
       if (container) {
         container.style.display = "block";
+        gsap.set("#defaultLayout", {
+          autoAlpha: 0,
+        });
+        gsap.to("#defaultLayout", {
+          delay: 0.2,
+          autoAlpha: 1,
+        });
       }
     });
   });
